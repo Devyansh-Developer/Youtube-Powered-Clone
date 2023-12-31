@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- <link rel="stylesheet" href="style.css" class="css"> -->
+    <style>
+
+
+
+    </style>
+
+    <title>Youtube</title>
+</head>
+
+<body>
+
+    <section id="StartUp">
+
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_EAfMOs/Youtube.json" background="transparent"
+            speed="0.5" style="width: 500px; height: 500px;" autoplay></lottie-player>
+    </section>
+
+    <!-- Top header with  youtube  search  bar, Logo, mic, user icons   -->
+    <header class="top-nav">
+
+        <!-- This includes Toggle  with Logo on clicking Toggle  (fa-bars) the  left side  expands  -->
+        <div class="logoWithMenu">
+            <i class="fa-solid fa-bars  leftSectionExpandToggle" ></i>
+            <i class="fa-brands fa-youtube" style="color: #eb0000; cursor:pointer;" onclick="location.reload();"><span  style="color: var( --WhiteColor:white;) ;font-family: 'TradeGothic LT Bold Extended', sans-serif; ">Youtube</span></i>
+        </div>
+
+        <!-- This includes mic beside  search bar with  functionality of clicking  and appearing search icon and blue  border   -->
+        <div class="searchWithMic">
+            <div class="searchWithGuess">
+                <div class="YTsearch">
+                    <!-- This  is left search  icon appear on typing -->
+                    <i class="fa-solid fa-magnifying-glass"id="hoverMaginfy"></i>
+
+                    <!-- This  is search  bar with  suggestion functionality   -->
+
+                    <input type="search" class="videoSearch "onkeydown="alert('Server:Error')" placeholder="Search" >
+                    <div class="search-guess"></div>
+
+
+                    <!-- This is  search icon  with  search  bar   -->
+                    <i class="fa-solid fa-magnifying-glass" onclick="searchMagnify()"></i>
+
+                </div>
+                <i class="fa-solid fa-microphone"  onclick="mic()"></i>
+            </div>
+            <!-- This is microphone  icon with functionality  -->
+
+
+            <!-- This is whole mic div with another mic  icon  and glowing  animation  -->
+            <div class="micDiv">
+                <i class="fa-solid fa-microphone  micAnim"></i> <!-- onclick="micAnim()"  can be included-->
+            </div>
+        </div>
+
+        <!-- This section  includes video, bell and user icon  -->
+        <div class="rightMostIcons">
+            <i class="fa-solid fa-video" onclick="videoUpload()"></i>
+            <i class="fa-solid fa-bell" onclick="ytNotify()"></i>
+
+            <!-- On clicking  this user div expands with  various settings   -->
+            <i class="fa-solid fa-user" onclick="userInfo()">
+
+        </i>
+        </div>
+
+
+        <!-- This is  the  whole new div  activates on clicking  user icon  -->
+        <div class="userDiv">
+            <div class="loginSection">
+                <i class="fa-solid fa-user" ></i>
+                <div class="loginText">
+                    <span class="ProfileInput">   <input type="text" id="ProfileName" placeholder="Dev Coder"><i class="fa-regular fa-pen-to-square editProfile"></i></span>
+                    <p>Manage Your Google Account</p>
+                </div>
+            </div>
+            <div class="scollInfo">
+                <div class="LoginContent">
+                    <i class="fa-solid fa-user-minus" onclick="ytChannelDiv()"><span>Your Channel</span></i>
+
+                    <i class="fa-brands fa-square-youtube" onclick="ytStudioDiv()"><span>Youtube Studio</span></i>
+                    <i class="fa-solid fa-moon" onclick="appearance()"><span>Appearance</span></i>
+
+                    <i class="fa-solid fa-users"><span>Switch Account</span></i>
+
+                    <i class="fa-solid fa-right-from-bracket"><span>LogOut</span></i>
+                    <hr>
+                    <i class="fa-solid fa-dollar-sign"><span>Purchase Membership</span></i>
+
+                    <i class="fa-solid fa-database"><span>Your Data in Youtube</span></i>
+                    <hr>
+                    <i class="fa-solid fa-language"><span>Languages</span></i>
+
+                    <i class="fa-solid fa-shield-halved"><span>Restriction Mode:OFF/ON<span></i>
+
+                    <i class="fa-solid fa-location-dot"><span>Location</span></i>
+
+                    <i class="fa-solid fa-keyboard"><span>Keyboard Shortcut</span></i>
+                    <hr>
+                    <i class="fa-solid fa-gear"><span>Settings</span></i>
+                    <hr>
+
+                    <i class="fa-solid fa-message"><span>Feedback</span></i>
+
+                </div>
+            </div>
+            <span  class="policy">Privacy Policy<sup class="Powerdot">.</sup>Terms and Conditions</span>
+
+        </div>
+
+    </header>
+    <!-- Here header  ends  -->
+
+
+    <main>
+        <div class="left-section">
+            <a href="#" onclick="location.reload();" class="leftSectionSideIcon">
+                <span class="material-symbols-outlined" >home</span><strong>Home</strong> </a>
+
+            <a href="#" class="leftSectionSideIcon"
+                onclick="ytShortVid()"><img class="ytshortlogo"src="https://cdn.pixabay.com/photo/2021/05/05/12/16/shorts-png-6230962_1280.png"/><strong>Shorts</strong></a>
+
+            <a href="#" class="leftSectionSideIcon uploadVideo" onclick="videoUpload()"><span class="material-symbols-outlined">
+add_circle
+</span> <strong>Add</strong></a>
+
+            <a href="#"
+                class="leftSectionSideIcon"><span class="material-symbols-outlined" onclick="subscribeVid()"> subscriptions</span><strong>Subscriptions</strong>
+            </a>
+
+            <a href="#"
+                class="leftSectionSideIcon"><span class="material-symbols-outlined" onclick="libraryVid()">video_library</span><strong>Library</strong></a>
+            <a href="#" class="hide leftSectionSideIcon" onclick="historyVid()"><span class="material-symbols-outlined">
+history
+</span><strong>History</strong></a>
+            <a href="#" class="hide leftSectionSideIcon"><span class="material-symbols-outlined">
+manage_history
+</span><strong>Watch&nbspLater</strong></a>
+            <a href="#" class="hide  leftSectionSideIcon"><span class="material-symbols-outlined">
+emoji_flags
+</span><strong>Report History</strong></a>
+        </div>
+        <section class="main-section">
+
+            <div class="categoriesSection">
+                <span class="indicator"id="right">   <i class="fa-solid fa-chevron-left "  onclick="right()"></i></span>
+                <div id="categories">
+
+                </div>
+                <span class="indicator" id="left" >   <i class="fa-solid fa-chevron-right "  onclick="left()"></i></span>
+
+
+            </div>
+
+            <!-- Upload Video Div -->
+
+            <section class="lottieSection">
+                <div class="uploadLottie">
+
+                </div>
+            </section>
+            <section class="videos">
+
+                <!-- This is  the div  for video when the user will  click on it -->
+                <div class="sidevid">
+                    <div class="GetVideo"></div>
+                </div>
+                <section class="video-groups">
+                    <div class="heroDiv">
+                        <div class="leftHerocontent">
+                            <span class="material-symbols-outlined cancelHeroDiv">close</span>
+                            <h2>Follow Me On <br>CodePen</h2>
+                            <a href="https://bit.ly/42WtByl" class="letsGoButton">Let's Go</a>
+                        </div>
+
+                        <i class="fa-brands fa-codepen"></i>
+                        <img  class="metahuman"src="http://drive.google.com/uc?export=view&id=1Z7UQ_AXKsu5hZ18hjfmvbvpOBF0IKrff">
+                        <img  class="metahuman  metahumanWave"src="https://www.pngmart.com/files/12/Purple-Wave-PNG-HD.png">
+
+
+                    </div>
+
+                </section>
+            </section>
+
+            <div id="alertDiv">
+            </div>
+
+        </section>
+
+        <section class="YtSmallDiv"> </section>
+
+    </main>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script>
+
+    </script>
+    <!-- <script src="script.js"></script> -->
+
+</body>
+
+</html>

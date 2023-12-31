@@ -1,0 +1,1970 @@
+:root{
+     --WhiteColor:white;
+    --BlackColor:black;
+    --GreyColor:#272727;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+     font-family: 'YouTube Sans', sans-serif;
+     color: var(--WhiteColor);
+    
+}
+
+
+body{
+ overflow-x: hidden;
+ font-family: 'YouTube Sans', sans-serif;
+ 
+}
+
+
+.dark-ThemeActive{
+   --WhiteColor:black;
+    --BlackColor:white;
+    --GreyColor:#E5E5E5;
+}
+
+
+/* The nav includes in header section  */
+.top-nav{
+    overflow: hidden;
+    padding: 10px;
+    padding-left: 30px;
+    width:100vw;
+    height:70px;
+    background-color: var(--BlackColor);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+
+/* This includes youtube  logo and  toggle bar   */
+.logoWithMenu{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+
+}
+.logoWithMenu .fa-bars{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width:42px;
+    height: 42px;;
+    font-size: 22px;
+}
+.logoWithMenu .fa-bars:hover{
+    border-radius: 100px;
+    background-color: var(--GreyColor);
+}
+.logoWithMenu .fa-youtube{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+ height: 20px;
+
+ font-size:32px ;
+}
+.searchWithMic{
+    margin-left: 15px;
+    width: 50%;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+
+}
+
+/* This is for  search guess  div  */
+.searchWithGuess{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    
+    width: 47%;
+    height: 500px;
+  
+}
+.search-guess{
+    position: absolute;
+
+    z-index: 999;
+   width: 100%;
+   height: 300px;
+   background-color: var(--BlackColor);
+   border-radius: 5px;
+   top:120%;
+   display: none;
+   padding: 10px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+
+}
+.search-guess::-webkit-scrollbar {
+  width: 0px;
+ 
+}
+
+.searchGuessText {
+    padding: 10px;
+    cursor: pointer;
+}
+.searchGuessText  span{
+    font-size: 14px;
+    font-weight: 200;
+    margin-left: 7px;
+    
+    
+    
+}
+.searchGuessText  hr{
+    margin: 3px 0px;
+    border: 1px solid  var(--GreyColor);
+}
+
+.YTsearch{
+    position: relative;
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:90%;
+    height: 42px;
+    background-color: var(--BlackColor);
+    border-radius: 45px;
+    border:1px solid  var(--GreyColor);
+}
+
+
+.videoSearch{
+  
+    width:80%;
+    height: 30px;
+   padding-left: 5px;
+    background-color: transparent;
+    border: 0px;
+    font-size: 15px;
+    
+}
+
+
+
+.videoSearch:focus{
+    background-color: transparent;
+    outline: none;
+    
+    
+}
+.YTsearch .fa-magnifying-glass{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+  width:75px;
+  height: 38px;
+  margin-right: 0px;
+  background-color:  var(--GreyColor);
+  border-radius: 0px 45px 45px 0px;
+  font-size: 20px;
+}
+#hoverMaginfy{
+       
+    align-items: center;
+    justify-content: center;
+  width:50px;
+  height: 43px;
+ background-color: transparent;
+  border-radius: 450px 0px 0px 450px;
+  font-size: 20px;
+ display: none;
+  }
+.searchWithMic .fa-microphone{
+
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width:42px;
+    height: 42px;
+    font-size: 22px;
+}
+.searchWithMic .fa-microphone:hover{
+    border-radius: 100px;
+    background-color:  var(--GreyColor);
+}
+.rightMostIcons{
+    position: relative;
+     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  width:200px;
+  height: 43px;
+}
+.rightMostIcons .fa-bell, .rightMostIcons .fa-video,.rightMostIcons .fa-user,.searchWithMic .fa-microphone{
+        
+      display: flex;
+    align-items: center;
+    justify-content: center;
+     width:42px;
+    height: 42px;
+    font-size: 22px;
+} 
+.rightMostIcons .fa-bell:hover, .rightMostIcons .fa-video:hover,.rightMostIcons .fa-user:hover{
+    border-radius: 100px;
+    background-color:  var(--GreyColor);
+}
+.micDiv{
+    
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:150px;
+    width:500px;
+    height: 60%;
+     background-color:  var(--BlackColor);
+    border-radius: 10px;
+    display: none;
+    z-index: 9999;
+    
+
+}
+.micDiv  .fa-microphone{
+   
+     
+     padding: 60px;
+     font-size: 40px;
+    height: 100px;
+    border-radius: 50%;
+    transition: 0.5s;
+
+}
+.micAnim{
+    animation: micglow 1s infinite alternate ease-in;
+}
+
+@keyframes micglow{
+    to{
+        border-radius: 100px;
+    background-color: var(--GreyColor);
+    border:20px solid transparent;
+    
+   
+    }
+    from{
+       
+       border:10px solid #3E54AC;
+    }
+}
+
+
+@media(max-width:700px){
+    .logoWithMenu .fa-bars{
+        display: none;
+    }
+    .searchWithGuess{
+    width: 75%;
+   
+  gap: 0px;
+}
+    .searchWithMic{
+        width:100%;
+       padding-left: 15px;
+       
+       
+        
+    }
+   .search-guess {
+  position: fixed;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 90vw;
+  z-index: 999;
+}
+    .logoWithMenu .fa-youtube>span{
+        display: none;
+    }
+    .searchWithMic .fa-microphone{
+        width: 50px;
+        margin-right: 10px;
+    }
+    .top-nav{
+        padding-right: 5px;
+        padding-left: 10px;
+    }
+
+    
+    
+    .rightMostIcons .fa-bell, .rightMostIcons .fa-video{
+  display: none;
+    }
+    
+    .YTsearch{
+    width:100%;
+    height: 36px;
+    margin-right: 10px;
+   
+   
+}
+.videoSearch{
+  width:80%;
+    height: 40px;
+    
+}
+
+.YTsearch .fa-magnifying-glass{
+  width:50px;
+  font-size: 15px;
+    height: 33px;
+}
+.searchWithMic{
+gap:0px;
+}
+.rightMostIcons{
+
+  width:40px;
+ 
+}
+#hoverMaginfy{
+    font-size: 15px;
+}
+
+/* This is the individual div  for mic animation  */
+.micDiv{
+
+   position: fixed;
+  top:300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  width: 90vw;
+}
+}
+/* //for user DIv  */
+.userDiv{
+    position: absolute;
+    right:20px;
+    top:80px;
+   
+    z-index: 10;
+    width:350px;
+    height: 95%;
+    
+    box-sizing: border-box;
+    background-color:var(--BlackColor);
+    border-radius: 10px;
+    color: white;
+    display: none;
+   
+}
+.loginSection{
+    width: 100%;
+    height: 90px;
+    
+    
+     border-bottom: 2px solid var(--GreyColor);
+}
+.loginSection{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.loginSection .loginText{
+    width: 70%;
+}
+.loginSection p{
+    color: #3A92DC;
+    font-size:15px;
+}
+.userDiv .fa-user{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 400px;
+    background-color: #3A92DC;
+} 
+
+.scollInfo {
+     height:80%;
+  overflow: scroll;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--GreyColor) transparent;
+  position: relative;
+}
+
+.scollInfo::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scollInfo::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scollInfo::-webkit-scrollbar-thumb {
+  background-color: var(--GreyColor);
+  border-radius: 3px;
+  border: 1px solid var(--GreyColor);
+} 
+.LoginContent{
+ 
+   
+    min-height: 70vh;
+    display: flex;
+    padding-top:10px;
+    
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap:40px;
+    font-size: 22px;
+   
+}
+.LoginContent   i{
+    margin-left: 20px;
+    cursor: pointer;
+   
+    
+}
+.LoginContent   i span{
+ font-weight: 400;
+}
+.LoginContent  span{
+    padding-left: 15px;
+    font-size: 15px;
+    /* font-family: 'TradeGothic LT Bold Extended', sans-serif; */
+    font-weight: 100;
+}
+.LoginContent  hr{
+    width: 100%;
+    border: 0.5px  solid var(--GreyColor);
+
+ 
+}
+.policy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0;
+
+}
+.Powerdot{
+    font-size: 20px;
+    padding: 2px;
+    padding-bottom: 20px;
+}
+
+@media(max-width:700px){
+    .userDiv{
+position: absolute;
+top:65px;
+width: 100vw;
+height: 100vh;
+right: 0;
+left: 0;
+border-radius: 0px;
+border-top: 1px solid var(--GreyColor);
+  background-color:var(--BlackColor);
+
+    }
+    .LoginContent{
+        padding: 30px  0px;
+       
+    }
+    .LoginContent   i{
+        font-size: 18px;
+    }
+    .userDiv h2{
+     font-size: 20px;
+    }
+    .loginSection p{
+    font-size: 15px;
+}
+.userDiv .fa-user{
+    font-size: 20px;
+}
+.scollInfo {
+     height: 60%;
+  
+}
+.policy{
+    opacity: 1;
+
+}
+}
+
+.left-section{
+    height: 100vh;
+    width:110px;
+    background-color: var(--BlackColor);
+    color: white;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    gap:1px;
+    padding: 20px;
+    padding-left: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 100;
+    box-shadow: 5px 0px 2px 0px var(--GreyColor);
+    
+}
+.left-section.active {
+ width: 400px;
+  padding-left: 30px;
+  gap: 0px;
+}
+
+
+.left-section::-webkit-scrollbar {
+  width: 3px;
+  height: 50px;
+}
+
+.left-section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.left-section::-webkit-scrollbar-thumb {
+  background-color: var(--GreyColor);
+  border-radius: 3px;
+  border: 1px solid var(--GreyColor);
+} 
+.leftSectionSideIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    width:90px;
+    height: 90px;
+    border-radius: 8px;
+
+}
+.leftSectionSideIcon.active{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  padding: 15px 10px;
+  width: 100%;
+  height: 70px;
+}
+.left-section a:hover{
+  background-color: var(--GreyColor);
+}
+.ytshortlogo{
+    width: 25px;
+}
+strong{
+    padding: 10px;
+    display: block;
+    font-size: 12px ;
+     /* font-family: 'YouTube Sans', sans-serif; */
+}
+.uploadVideo{
+    display: none;
+}
+
+
+
+main{
+    display: flex;
+   height: 85vh;
+    
+}
+.main-section{
+   
+      height: 100vh;
+    width:100%; 
+  background-color: var(--BlackColor);
+    overflow:hidden;
+}
+@media(max-width:700px){
+    main{
+        flex-direction: column-reverse;
+        
+    }
+    .left-section {
+        width: 100vw;
+        height: 65px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        
+        overflow: hidden;
+          
+        padding: 0px 5px;
+         flex-direction: row;
+         justify-content: center;
+         gap: 0px;
+         box-shadow: 0px -4px 2px 0px var(--GreyColor);
+    }
+    .left-section a:hover{
+  background-color: transparent;
+}
+   
+    .left-section .hide{
+        display: none;
+    }
+    .left-section a{
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 20%;
+       
+         padding-top:18px;
+         
+       
+    }
+    .uploadVideo{
+    display: block;
+}
+
+
+}
+
+
+/* //header categories */
+.categoriesSection{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+   
+
+    height: 45px;
+   background-color: var(--BlackColor);
+    overflow:hidden;
+    padding: 0px 22px;
+    
+   
+    
+}
+#categories{
+    display: grid;
+    /* grid-template-columns: repeat(50,  1fr); */
+    gap:20px;
+    overflow-x: scroll;
+     width: 100%;
+    
+     padding:6px  30px;
+   
+}
+.categoryCommon{
+    display: inline-block;
+    background-color: var(--GreyColor);
+    padding: 10px;
+    border-radius: 4px;
+    transition: 0.5s;
+    cursor: pointer;
+     white-space: nowrap;
+}
+.All{
+    background-color: var( --WhiteColor);
+    color:var(--BlackColor);
+}
+.New-Video{
+    box-sizing: border-box;
+    color: white;
+  background: #833ab4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+.categoryCommon:hover{
+    transform: scale(0.95);
+}
+#categories::-webkit-scrollbar {
+  width: 3px;
+  height: 2px;
+}
+
+#categories::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#categories::-webkit-scrollbar-thumb {
+  background-color: var(--GreyColor);
+  border-radius: 3px;
+  border: 1px solid var(--GreyColor);
+} 
+/* Indicators */
+.indicator{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+   position: absolute;
+     width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    
+     background-color: var(--BlackColor);
+    backdrop-filter: blur(4px);
+    transform: rotate(180deg);
+    
+}
+.indicator:hover{
+    background-color: var(--GreyColor);
+}
+#right{
+
+    right: 0;
+    z-index: 1;
+}
+#left{
+    z-index: 1;
+    left: 0;
+}
+@media(max-width:700px){
+  .categoriesSection{
+    height: 37px;
+    padding: 20px 30px;
+     /* position:static; */
+     
+     
+    border-bottom: 1px solid var(--GreyColor);
+     border-top: 1px solid var(--GreyColor);
+   
+     
+  
+}
+.indicator{
+    height: 30px;
+    font-size: 12px;
+    width: 30px;
+   
+}
+
+#categories{
+    display: grid;
+    grid-template-columns: repeat(15,  1fr);
+    overflow-x: scroll;
+
+    
+     gap: 5px;
+      padding:6px  0px;
+     
+   
+}
+
+.categoryCommon{
+    
+    padding: 8px;
+    border-radius: 3px;
+     white-space: nowrap;
+     font-size: 12px;
+    
+}
+.categoryCommon:hover{
+    transform: scale(0.95);
+}
+}
+
+
+
+
+
+.videos{
+
+display: flex;
+width: 100%;
+overflow-x:hidden;
+ overflow-y: scroll;
+
+ gap:40px;
+ height: 100vh;
+  padding: 10px;
+
+
+}
+.videos::-webkit-scrollbar {
+  width: 0px;
+ 
+}
+
+
+.video-groups{
+   
+    display: flex;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
+height: auto;
+ gap:20px;
+  padding: 0px;
+ 
+  overflow-y: scroll;
+ 
+   
+}
+.video-groups::-webkit-scrollbar {
+  width: 0px;
+ 
+}
+.mainDiv{
+    width: 350px;
+    height: 350px;
+    
+      /* background-color: #B61A91; */
+}
+ .videoContent {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background-color: var(--GreyColor);
+    border: 2px solid var(--GreyColor);
+    border-radius: 8px;
+    
+   
+  
+}
+ .videoLowContent  .SubscribeButton{
+    display: none;
+}
+.videoLowContent .subscrCount{
+    display: none;
+}
+
+
+.videoLowContent{
+      height:40% ;
+    width: 100%;
+      margin-top: 10px;
+    
+    display: flex;
+
+    justify-content:space-around;
+    gap:10px;
+    padding: 5px;
+}
+
+.moreRender{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   padding: 5px;
+    border-radius: 30px;
+    position: absolute;
+    right: 0;
+}
+.moreRender:hover{
+    background-color:gray;
+
+}
+
+.videoLowInfo{
+ width: 80%;
+    
+   
+    display: flex;
+    align-items:flex-start;
+    
+    flex-direction: column;
+    gap:5px;
+    
+}
+.ytTitle{
+font-size: 18px;
+
+
+
+}
+.AllChannelDetails{
+    display: flex;
+    flex-direction: row;
+}
+.channelDetails{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+}
+.channelName{
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+    opacity: 0.7;
+    font-size: 15px;
+
+
+}
+.vidViews{
+        opacity: 0.7;
+    font-size: 15px;
+}
+.videoContent iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+   
+    /* filter: contrast(2px); */
+}
+.channelLogo{
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    width:45px;
+    height: 45px;
+    border-radius: 45px;
+   
+    font-size: 30px;
+    border: 1px solid var(--WhiteColor);
+    color: white;
+}
+
+.heroDiv{
+    margin-top: 20px;
+    width:100%;
+    height: 350px;
+    position: relative;
+   
+    border-radius: 6px;
+    color: white;
+   
+ 
+    background: url('https://img.freepik.com/free-vector/abstract-technological-background_23-2148897676.jpg?w=740&t=st=1683195386~exp=1683195986~hmac=7ee17932262ceb5c75342eff42e86afea91e7d9cfdd3bcc4d904a3374777257e');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    /* display: none; */
+    justify-content: space-between;
+   
+
+}
+.cancelHeroDiv{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    cursor: pointer;
+    font-size: 30px;
+    color: white;
+    z-index: 1;
+   
+  
+
+}
+.heroDiv h2{
+    color: white;
+}
+.fa-codepen {
+    position: absolute;
+    font-size: 70px;
+    bottom: 170px;
+    right:25rem;
+ background: linear-gradient(to left,#ffffff,#E11299 , #B61A91);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+
+
+.leftHerocontent{
+ 
+    padding-left: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 30px;
+    gap: 20px;
+    
+   
+
+
+
+}
+.metahuman{
+ position: absolute;
+ bottom: 0px;
+ right:20px;
+width: 530px;
+transform: rotateY(180deg);
+}
+.metahumanWave{
+    transform: rotateY(180deg);
+  
+    bottom: -10px;
+    margin-right: -20px;
+
+}
+
+.leftHerocontent .letsGoButton{
+    padding: 8px 30px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+.sidevid{
+    width: 100%;
+    height: 100%;
+   
+  margin-bottom: 12px;
+  /* background-color: white; */
+  padding: 5px;
+  
+   display: none;
+   overflow-y: scroll;
+}
+.sidevid::-webkit-scrollbar {
+  width: 0px;
+ 
+}
+
+@media(max-width:1000px){
+     .metahuman{
+         width: 400px;
+        right: 0;
+        
+    }
+        .fa-codepen {
+   font-size: 60px;
+   right:19rem;
+   bottom: 150px;
+  
+  
+}
+.leftHerocontent{
+ font-size: 20px;
+ padding-left: 10px;
+}
+    .heroDiv{
+height: 260px;
+    }
+}
+@media(max-width:700px){
+    .heroDiv{
+height: 170px;
+margin: 10px 0px;
+width: 100%;
+border-radius: 0px;
+    }
+   
+    .metahuman{
+        right: -10px;
+        width: 250px;
+    }
+    .fa-codepen {
+   font-size: 35px;
+   right:10.5rem;
+   bottom: 85px;
+  
+  
+}
+.leftHerocontent{
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: 100;
+}
+.leftHerocontent .letsGoButton{
+    font-size: 15px;
+    font-weight: 700;
+    padding: 8px 18px;
+}
+/* //for video */
+.videos{
+    gap:5px;
+    padding: 0px;
+  
+   
+}
+.video-groups{
+    overflow-y: visible;
+       padding-bottom: 200px;
+}
+.sidevid{
+    margin-bottom: 5px;
+  
+    overflow-y: visible;
+}
+.videoContent{
+    border-radius: 0px;
+}
+
+
+  
+}
+
+@media(max-width:900px){
+
+.videoContent{
+
+    height:120px ;
+    
+    
+}
+.mainDiv{
+    height: 280px;
+    width: 360px;
+    margin: 10px 0px;
+}
+
+
+
+.ytTitle{
+font-size: 14px;
+
+
+}
+.channelName{
+   
+    font-size: 12px;
+
+}
+.vidViews{
+      
+    font-size: 12px;
+}
+
+.channelLogo{
+
+
+    width:39px;
+    height: 39px;
+    border-radius: 39px;
+    font-size: 25px;
+
+
+}
+}
+
+
+
+
+.channelLogo{
+    cursor: pointer;
+}
+.GetVideo{
+    
+   
+    height: fit-content;
+}
+.GetVideo iframe{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+ width: 100%;
+ height: 100%;
+}
+
+.GetVideo .ytTitle {
+font-size: 20px;
+}
+.GetVideo iframe{
+    pointer-events: all;
+}
+.GetVideo .videoContent {
+  
+    border-radius: 0px;
+    
+}
+.GetVideo .SubscribeButton{
+    height: 35px;
+   width: 135px;
+    color:var(--BlackColor);
+    background-color: var(--WhiteColor);
+    border-radius: 45px;
+   
+    font-size: 15px;
+    border: 1px solid var(--WhiteColor);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+
+}
+.GetVideo .SubscribeButton.active{
+    background-color:red;
+    color: var(--WhiteColor);
+    
+}
+
+.GetVideo .channelName{
+    font-size: 20px;
+    opacity: 1;
+}
+.GetVideo .vidViews{
+    display:none;
+}
+.GetVideo .subscrCount{
+    position: relative;
+    display: block;
+    font-size: 15px;
+    opacity: 0.8;
+    bottom: 10px;
+
+}
+
+
+/* After clicking  on any video  */
+@media(max-width:700px){
+    .videos{
+         flex-direction: column;
+    }
+    .video-groups{
+        width: 100%;
+      
+    }
+  
+.GetVideo .ytTitle {
+font-size: 17px;
+}
+
+
+.GetVideo .channelName{
+    font-size: 18px;
+   
+}
+
+.GetVideo .subscrCount{
+
+    font-size: 15px;
+
+}
+.GetVideo .videoContent{
+    position: fixed;
+    top: 111px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+   border: 0px;
+    border-bottom: 2px solid  var(--GreyColor);
+    
+   
+}
+.sidevid{
+    margin-top: 55%;
+}
+    
+}
+
+
+
+
+.live{
+  
+    width: 100%;
+    height: auto;
+ 
+    display: none;
+ 
+    
+}
+.GetVideo .live{
+    display: block;
+       position: relative;
+  
+}
+
+
+
+
+/* Here is  the all video description with all necessary buttons  */
+
+
+
+
+.VideoIcons{
+       width:100%;
+       margin-top: 10px;
+    height:auto;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: repeat(7,auto);
+    grid-template-rows: repeat(1, auto);
+    align-items: center;
+
+    padding: 0px 20px;
+    gap:10px;
+    color:  var(--WhiteColor);
+    overflow-x: scroll;
+    overflow-y: hidden;
+     box-sizing: border-box; 
+     margin: 0 auto;
+     
+}
+.VideoIcons::-webkit-scrollbar {
+  width: 1px;
+}
+
+
+
+.LikesAndUnlike{
+    border: 1px solid  var(--GreyColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 45px ;
+    padding: 0px 5px;
+    height: 32px;
+}
+.material-symbols-outlined{
+    cursor: pointer;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+
+}
+
+.LikesAndUnlike hr{
+    height: 15px;
+    border: 1px solid  var(--GreyColor);
+}
+
+.shareIcon,.pip, .ambientIcon, .reportIcon, .bookmarkIcon{
+      color:  var(--WhiteColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 15px;
+     border: 1px solid  var(--GreyColor);
+       border-radius: 45px ;
+    padding: 0px 5px;
+    height: 32px;
+    white-space: nowrap;
+}
+
+
+
+/* Video description  */
+.getVidDescription{
+    width: 100%;
+    height: 40px;
+    background-color:  var(--GreyColor);
+    
+overflow: hidden;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 30px;
+    font-size: 15px;
+   
+   
+    
+}
+
+.getVidViews{
+      padding-left: 10px;
+    width: 100%;
+    height: 20px;
+    background-color:  var(--GreyColor);
+    border-radius: 8px 8px 0px 0px;
+    padding-top: 2px;
+    
+}
+
+.getVidDescription.active{
+   height: 300px;
+   overflow-y: scroll;
+}
+.getVidDescription::-webkit-scrollbar {
+  width: 0px;
+ 
+}
+
+.ShowHideText{
+    width: 100%;
+    height: 25px;
+    
+    padding-top: 3px;
+    padding-left: 8px;
+    
+    
+
+    
+    box-sizing: border-box;
+    cursor: pointer;
+    color:  var(--WhiteColor);
+    
+     background-color:  var(--GreyColor);
+     border-radius: 0px 0px 8px 8px;
+    
+}
+.videoContent.active{
+    box-shadow: 0px 10px 50px -14px  var(--WhiteColor);
+}
+
+.videoIconsActive{
+    background-color:  var(--WhiteColor);
+    color: var(--BlackColor);
+}
+
+.videoIconsSpanActive{
+    color: var(--BlackColor);
+}
+
+
+
+
+
+/* For Youtube Comment Section  */
+.commentSection{
+    width: 100%;
+    height:auto;
+ 
+    background-color: var(--BlackColor);
+    margin-top: 10px;
+    padding: 10px;
+    gap: 30px;
+    border-top: 2px solid  var(--GreyColor);
+   
+  
+    
+    
+}
+.commentSection.active{
+    overflow: visible;
+    height: auto;
+}
+.UserComment{
+    width: 100%;
+  
+   
+}
+.UserInputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+}
+.UserCommentText{
+    
+    border: 1px solid  var(--GreyColor);
+    background-color: transparent;
+    border-radius: 4px;
+    width:45%;
+    padding: 5px ;
+
+}
+.UserCommentText:focus{
+    outline: 1px solid   var(--WhiteColor);
+}
+.OtherComments{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    
+    margin-top: 10px;
+    
+}
+
+
+.commentButton, .CommentHideUndo {
+    padding: 8px 5%;
+    
+    border-radius: 45px;
+    background-color:#65B8FF ;
+    border:0px;
+    font-size: 15px;
+    cursor: pointer;
+
+
+}
+.commentButton:active{
+    opacity: 0.8;
+}
+.UserCommentInput{
+    position: relative;
+    width: 100%;
+    height:auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    /* justify-content: center; */
+}
+.UserIcon, .OtherCommentedIcons{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #65B8FF;
+    border-radius: 40px;
+    border: 2px solid  var(--WhiteColor);
+    font-size: 25px;
+}
+.CommentHide{
+      padding: 8px 5%;
+    position: absolute;
+    border-radius: 45px;
+    background-color: transparent;
+    border:2px solid #65B8FF;
+    font-size: 15px;
+    right: 10px;
+
+    
+}
+.OtherUserComment{
+    display: flex;
+  flex-direction: row;
+  margin: 10px;
+  gap:20px;
+}
+
+
+ .commentSection hr{
+    border:1px solid  var(--GreyColor);
+}
+.LikesAndUnlikeForComments{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 45px ;
+    padding: 0px 5px;
+    height: 30px;
+    width: 50px;
+    font-size: 5px;
+    cursor: pointer;
+}
+.LikesAndUnlikeForComments span:active{
+opacity: 0.8;
+}
+
+
+
+.filterComments{
+    height: 50px;
+    display: flex;
+    gap: 50px;
+}
+.filterOtherComments{
+    position: relative;
+    cursor: pointer;
+     display: flex;
+     gap: 5px;
+    /* align-items: center; */
+    justify-content: center;
+    z-index: 0;
+    
+}
+.filterOption{
+    position: absolute;
+    display: none;
+    top:25px;
+    left: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    height: 40px;
+    background-color:  var(--GreyColor);
+    border-radius: 6px;
+}
+.filterOption.active{
+    display: flex;
+}
+.filterOption hr{
+   
+    width: 100%;
+}
+.filterOption:hover{
+    background-color:  var(--GreyColor);
+    border: 1px solid  var(--WhiteColor);
+}
+.TopDowncommentNav{
+ 
+   visibility: hidden;
+   
+}
+.TopDowncommentNav.active{
+    transform: rotateX(180deg);
+    height: 20px;
+   
+}
+.OtherCommentText{
+    width: 80%;
+}
+@media(max-width:700px){
+
+
+
+    .TopDowncommentNav{
+  
+   visibility: visible;
+   
+}
+.commentSection{
+   
+    height:40px;
+    overflow: hidden;
+
+}
+.filterOtherComments{
+    display: none;
+}
+.filterComments{
+    justify-content: space-between;
+   padding: 0px 10px;
+}
+.commentSection{
+   border-bottom: 2px solid  var(--GreyColor);  
+}
+.OtherGroupComment{
+    padding-bottom: 180px;
+}
+}
+
+
+
+/* < This is for To copy Text to clipboard while sharing  */
+
+.shareYtVideo{
+    width: 100%;
+    position: absolute;
+
+   inset: 0;
+    margin: 0 auto;
+    
+    top: 35px;
+    height: 110px;
+    background-color: var(--GreyColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 6px;
+    padding: 0px 30px;
+    box-sizing: border-box;
+  
+    display: none;
+    
+    
+    
+}
+.shareYtVideo.active{
+    display: flex;
+}
+
+
+
+.ShareYt1, .ShareYt2{
+       width: 100%;
+    height: 50px;
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.shareYtVideo input{
+    pointer-events: none;
+    width: 90%;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: var(--BlackColor);
+    border: 1px solid var(--WhiteColor);
+    
+}
+.shareYtVideo i{
+    font-size: 28px;
+    
+}
+/* Here icon will filled when it will click */
+.likeColor{
+color: #82bff0;
+}
+
+/* Here seperate alert div is made  */
+#alertDiv{
+  transform: translate(-50%, -50%);
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    padding: 10px;
+    
+    background-color: var(--GreyColor);
+    z-index: 1000000;
+    border: 1px solid var(--WhiteColor);
+    border-radius: 5px;
+    display: none;
+    
+   
+}
+
+/* This is for the more option in main div  */
+.moreRenderDiv{
+    position: absolute;
+    bottom: 20px;
+    right: 5%;
+    width: 200px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 6px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid gray;
+    display: none;
+
+
+    
+}
+.moreRenderDiv span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 2px 0px;
+    color: white;
+}
+.moreRenderDiv  hr{
+       border: 0px;
+       height: 1px;
+       background-color: white;
+}
+.GetVideo .moreRender{
+    display: none;
+}
+
+
+/* On startUP */
+#StartUp{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--WhiteColor);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* display: none; */
+  
+}
+
+
+
+/* Editing Profile Name  */
+#ProfileName{
+    width: 85%;
+    border: 0;
+    padding: 10px 2px;
+    background-color:rgba(50, 42, 42, 0);
+    font-size: 28px;
+    font-weight: 700;
+    pointer-events: none;
+    color: var(--WhiteColor);
+}
+#ProfileName.active{
+    pointer-events: all;
+}
+#ProfileName:focus{
+    outline: none;
+     color: var(--WhiteColor);
+}
+.ProfileInput{
+    padding-right:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#ProfileName::placeholder {
+    color: var(--WhiteColor);
+}
+.ProfileInput i{
+    font-size: 20px;
+}
+
+/* Small PIP div dragable  */
+.YtSmallDiv {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  height: 200px;
+  color: var(--WhiteColor);
+  cursor: move;
+  z-index: 9999;
+  border: 20px solid transparent;
+  box-sizing: border-box;
+  display: none;
+  
+
+}
+.YtSmallDiv:hover{
+     border: 20px solid var(--GreyColor);
+}
+.YtSmallDiv iframe{
+    width: 100%;
+    height: 160px;
+    background-color: var(--WhiteColor);
+    border: 1px solid var(--WhiteColor);
+
+}
+.YtSmallDiv.active{
+    display: block;
+}
+
+
+/* //Upload Video Div */
+
+.lottieSection{
+        position: relative;
+    top: 0px;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0;
+    background-color: var(--BlackColor);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.uploadLottie{
+
+   
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.cancelLottiDiv{
+    position:absolute;
+    top:20px;
+     right: 20px;
+     font-size: 20px;
+     cursor: pointer;
+     padding: 8px;
+     border-radius: 40px;
+    
+}
+.cancelLottiDiv:hover{
+      background-color:var(--GreyColor);
+}
+
+
+
+/* like animation */
+.likeBtn{
+    width: 50px;
+}
+.likeBtn  .likeAnim{
+    margin-top: 12px;
+}
+
+
+
+/* Subscribed MoreOption */
+.subscrOPtion{
+
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: var(--GreyColor);
+    gap: 7px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: 35px;
+    display: none;
+     
+   
+}
+.subscrOPtion.active{
+    display: flex;
+}
+.SubscribeButton:hover .subscrOPtion{
+    display: flex;
+}
+
+/* .subscrOPtion.active{
+   
+} */
+.subscrOPtion span{
+     display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 7px;
+    cursor: pointer;
+}
+
+.subscrOPtion hr{
+    width: 100%;
+    height: 1px;
+    background-color: var(--WhiteColor);
+    opacity: 0.6;
+    border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
